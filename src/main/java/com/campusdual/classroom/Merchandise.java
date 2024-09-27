@@ -1,5 +1,9 @@
 package com.campusdual.classroom;
 
+import java.util.Date;
+
+import java.util.Date;
+
 public abstract class Merchandise {
 
 	protected String name;
@@ -9,15 +13,10 @@ public abstract class Merchandise {
 	protected String area;
 	protected String shelf;
 	protected int quantity;
+	protected Date expirationDate; // Atributo para la fecha de caducidad
 
-	public Merchandise(String name, String uniqueId, String responsibleId) {
-		this.name = name;
-		this.uniqueId = uniqueId;
-		this.responsibleId = responsibleId;
-	}
-
-	public Merchandise(String name, String uniqueId, String responsibleId, int zone, String area, String shelf,
-			int quantity) {
+	// Constructor actualizado para aceptar fecha de caducidad
+	public Merchandise(String name, String uniqueId, String responsibleId, int zone, String area, String shelf, int quantity, Date expirationDate) {
 		this.name = name;
 		this.uniqueId = uniqueId;
 		this.responsibleId = responsibleId;
@@ -25,6 +24,11 @@ public abstract class Merchandise {
 		this.area = area;
 		this.shelf = shelf;
 		this.quantity = quantity;
+		this.expirationDate = expirationDate;
+	}
+
+	public Date getExpirationDate() {
+		return expirationDate;
 	}
 
 	public String getLocation() {
